@@ -105,13 +105,55 @@ function init() {
                         }
                     }
 
-                    navigationAnchors[i].addEventListener("click", function() {
-                        if (this.className.indexOf("active") >= 0) {
-                            return;
-                        }
-                        typeText("<span>roy@dhanwal</span>:<span>~</span><span>$</span><br/><br/>Hi, Im Roy.<p>I majored in Computer Science. I graduated from University of Houston.</p><p>I'm a Mac Application Dev in <a href='https://www.plantronics.com/'>Plantronics</a>.</p><p>I love to code, listen to music, and travel.</p>If you would like to get in touch with me, whether it be for tech support, a business venture, or to just say hi, feel free to send me an email. My email address is: <a href='mailto:roy@gmail.com'>roy@gmail.com</a>.<ul><li>Option 1</li><li>Option 2</li><li>Option 3</li><li>Option 4</li><li>Option 5</li></ul>",
-                        15, 100, this);
-                    });
+                    if (navigationAnchors.length == 6) {
+                        navigationAnchors[0].addEventListener("click", function() {
+                            if (this.className.indexOf("active") >= 0) {
+                                return;
+                            }
+                            typeText("",
+                            15, 100, this);
+                        });
+
+                        navigationAnchors[1].addEventListener("click", function() {
+                            if (this.className.indexOf("active") >= 0) {
+                                return;
+                            }
+                            typeText("<h3>Programming Languages</h3><span>: C, C++, Objective C, Java, JavaScript, C#, Unix Scripting</span><br/><h3>Web Skills and Markup Languages</h3><span>: HTML, XML, JSP, CSS</span><br/><br/><h3>Skills on Mobile Platform</h3><span>: Android app development using Java, iOS app development using Objective C</span><br/><br/><h3>Database and Servers</h3><span>: MySQL, SQL Server, Oracle, SQLite, Apache Tomcat, JBoss, Windows Server</span><br/><br/><h3>Web Services</h3><span>: RESTful</span><br/><br/><h3>Third-party Frameworks and Libraries</h3><span>: Boost, Chromium Embedded Framework, Electron, libudev, Selenium</span><br/><br/><h3>IDEs and Tools</h3><span>: Xcode, NetBeans, Eclipse, Visual Studio, Xamarin Studio, Android Studio, Instruments</span><br/><br/><h3>Version Control and Defect Management</h3><span>: Perforce, GitHub, Bitbucket. Jira, Rally, TeamTrack</span><br/><br/><h3>Operating Systems</h3><span>: Windows XP/7/8/10, Mac OS X, Ubuntu 16.04</span><br/><br/>",
+                            15, 50, this);
+                        });
+
+                        navigationAnchors[2].addEventListener("click", function() {
+                            if (this.className.indexOf("active") >= 0) {
+                                return;
+                            }
+                            typeText("<span><h3>Masters</h3> from <h3>University of Houston Clear Lake</h3> in <h3>Computer Science</h3></span><br/><br/><span><h3>BTech</h3> from <h3>DRK Institute of Science and Technology</h3> in <h3>Computer Science</h3></span>",
+                            15, 100, this);
+                        });
+
+                        navigationAnchors[3].addEventListener("click", function() {
+                            if (this.className.indexOf("active") >= 0) {
+                                return;
+                            }
+                            typeText("<div><h3>Plantronics Inc: Mac Application Developer (July 2016 - Present)</h3><br/><ul><li>Worked on cross platform apllication that interacts with large set of Human Interface Device.</li><li>Designed native libraries for Mac and Linux platforms, integrated them with cross-platform code.</li><li>C++ was used heavily to write cross-platform code.</li><li>Maintained build scripts for multiple platforms.</li></ul></div><div><h3>Tietronix Software Inc: Software Development Engineer - Intern (Jan 2016 - June 2016)</h3><br/><ul><li>Developed a mobile application using Xamarin for iOS and Android platforms that used bluetooth and location to register users to meetings.</li><li>Used SQLite.NET to develop the database connectivity layer as a cross-platform module.</li><li>Designed a web-based dashboard using JSP to show statistical data from XML files that are generated when software interacts with machinery working in space.</li></ul></div><div><h3>Mindagile LLC : Software Development Engineer - Intern (Jul 2015 - Sep 2015)</h3><br/><ul><li>Used WPF and C# under Windows platform to develop an application Red Point Application for a bio-medical organization.</li><li>Integrated SciChart library with the application to create charts from input data.</li><li>Implemented the MV VM architectural pattern to bind data to different views such as grid view and list view; added pagination and sorting capabilities to each view.</li></ul></div><div><h3>University of Houston Clear Lake : Research Assistant and Independent Study (Jan 2015 - Aug 2015)</h3><br/><ul><li>Developed an Android application, which runs parallel algorithm on the GPU of the mobile device using OpenCL library and Java NDK to compare computational speed of serial processing on CPU and parallel processing on GPU.</li><li>Designed a web crawler to fetch data from a social networking site Pinterest and determine relation between multiple users.</li></ul></div>",
+                            15, 30, this);
+                        });
+
+                        navigationAnchors[4].addEventListener("click", function() {
+                            if (this.className.indexOf("active") >= 0) {
+                                return;
+                            }
+                            typeText("<div style='margin-bottom: 4vw;'><h2>University of Houston Clear Lake</h2><div style='margin-bottom: 2vw;'><h3>Powered by Science Mobile Application</h3><br/><span style='margin-left: 5vw'>A useful classroom tool to support instructions in science, math and reading comprehension. Worked on Unity to convert a web-based application into a mobile gaming application compatible with both iOS and Android platforms. Worked on its performance by removing redundant UI renderings.</span></div><div><h3>Photo Puzzle</h3><br/><span style='margin-left: 5vw'>An iOS gaming application to transform a scrambled image into a meaningful big picture based on three ideal factors: the total amount of time taken to arrange the picture, total scores and the number of moves made.</span></div></div><div><h2>DRK Institute of Science and Technology</h2><div style='margin-bottom: 2vw;'><h3>Client Server Based Data Encryption System using DES and AES</h3><br/><span style='margin-left: 5vw'>The application provided secure message transfer between authorized and authenticated users. The concept of cryptography was implemented to ensure secure and efficient message transfers.</span></div><div><h3>Packet-Hiding Methods for Preventing Selective Jamming Attack</h3><br/><span style='margin-left: 5vw'>Secure data transmission through a wireless network between source and destination using techniques such as Encryption, Hiding Commitment Scheme and Puzzle Hiding Scheme.</span></div></div>",
+                            15, 30, this);
+                        });
+
+                        navigationAnchors[5].addEventListener("click", function() {
+                            if (this.className.indexOf("active") >= 0) {
+                                return;
+                            }
+                            typeText("",
+                            15, 100, this);
+                        });
+                    }
                 }
                 // Once the navigation is set, make a click on the first navigation menu to show default content
                 if (navigationAnchors.length > 0) {
