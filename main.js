@@ -1,7 +1,7 @@
 var typeCommand = true;
 var lastCommand = "";
 
-function init() {
+function doLoad() {
     // Loader - Creating a canvas and appending to the body
     var loader = document.createElement("canvas");
     document.body.appendChild(loader);
@@ -15,7 +15,7 @@ function init() {
         letters[i] = 0;
     }
     var stop = false, runLoader = true, runLoaderFade = false;
-    var loaderTotalTime = 5000, loaderFadeTime = 1250, loaderTime = loaderTotalTime - loaderFadeTime, loaderIntervalTime = 50;
+    var loaderIntervalTime = 50, loaderFadeTime = 1250, loaderTotalTime = (Math.ceil(width / fontSize) * (loaderIntervalTime * 1.5)) + loaderFadeTime + 750, loaderTime = loaderTotalTime - loaderFadeTime;
 
     /*
      * stop : Completely stops the whole loader animation
@@ -110,15 +110,15 @@ function init() {
                             if (this.className.indexOf("active") >= 0) {
                                 return;
                             }
-                            typeText("",
-                            15, 100, this);
+                            typeText("<span style='margin-left: 5vw;'>Welcome, my name is Arup. I am a software developer who loves to write software to build great products and help business succeed with ther goals. I have been working  professionally in Software development since 2015 in the desktop and web application spaces. I have also had academic experience in mobile application development.</span><br/><br/><span style='margin-left: 5vw;'>Even though, I love to write to code in any language; my favourite programming language is C++. I am interested in learning technologies and love to solve problems. My all time favourite problem is to play with prime numbers and keep trying to improvise Sieving algorithms. I believe there is always a scope to learn and improve myself in my field of work. So I keep trying to learn everyday as much as I can.</span><br/><br/><span style='margin-left: 5vw;'>Please feel free to explore. :)</span>",
+                            15, 50, this);
                         });
 
                         navigationAnchors[1].addEventListener("click", function() {
                             if (this.className.indexOf("active") >= 0) {
                                 return;
                             }
-                            typeText("<h3>Programming Languages</h3><span>: C, C++, Objective C, Java, JavaScript, C#, Unix Scripting</span><br/><h3>Web Skills and Markup Languages</h3><span>: HTML, XML, JSP, CSS</span><br/><br/><h3>Skills on Mobile Platform</h3><span>: Android app development using Java, iOS app development using Objective C</span><br/><br/><h3>Database and Servers</h3><span>: MySQL, SQL Server, Oracle, SQLite, Apache Tomcat, JBoss, Windows Server</span><br/><br/><h3>Web Services</h3><span>: RESTful</span><br/><br/><h3>Third-party Frameworks and Libraries</h3><span>: Boost, Chromium Embedded Framework, Electron, libudev, Selenium</span><br/><br/><h3>IDEs and Tools</h3><span>: Xcode, NetBeans, Eclipse, Visual Studio, Xamarin Studio, Android Studio, Instruments</span><br/><br/><h3>Version Control and Defect Management</h3><span>: Perforce, GitHub, Bitbucket. Jira, Rally, TeamTrack</span><br/><br/><h3>Operating Systems</h3><span>: Windows XP/7/8/10, Mac OS X, Ubuntu 16.04</span><br/><br/>",
+                            typeText("<h3>Programming Languages</h3><span>: C, C++, Objective C, Java, JavaScript, C#, Unix Scripting</span><br/><br/><h3>Web Skills and Markup Languages</h3><span>: HTML, XML, JSP, CSS</span><br/><br/><h3>Skills on Mobile Platform</h3><span>: Android app development using Java, iOS app development using Objective C</span><br/><br/><h3>Database and Servers</h3><span>: MySQL, SQL Server, Oracle, SQLite, Apache Tomcat, JBoss, Windows Server</span><br/><br/><h3>Web Services</h3><span>: RESTful</span><br/><br/><h3>Third-party Frameworks and Libraries</h3><span>: Boost, Chromium Embedded Framework, Electron, libudev, Selenium</span><br/><br/><h3>IDEs and Tools</h3><span>: Xcode, NetBeans, Eclipse, Visual Studio, Xamarin Studio, Android Studio, Instruments</span><br/><br/><h3>Version Control and Defect Management</h3><span>: Perforce, GitHub, Bitbucket. Jira, Rally, TeamTrack</span><br/><br/><h3>Operating Systems</h3><span>: Windows XP/7/8/10, Mac OS X, Ubuntu 16.04</span><br/><br/>",
                             15, 50, this);
                         });
 
@@ -126,7 +126,7 @@ function init() {
                             if (this.className.indexOf("active") >= 0) {
                                 return;
                             }
-                            typeText("<span><h3>Masters</h3> from <h3>University of Houston Clear Lake</h3> in <h3>Computer Science</h3></span><br/><br/><span><h3>BTech</h3> from <h3>DRK Institute of Science and Technology</h3> in <h3>Computer Science</h3></span>",
+                            typeText("<span><h3>Masters</h3> in <h3>Computer Science</h3> from <h3>University of Houston Clear Lake</h3></span><br/><br/><span><h3>Bachelors</h3> in <h3>Computer Science</h3> from <h3>DRK Institute of Science and Technology</h3></span>",
                             15, 100, this);
                         });
 
@@ -150,7 +150,7 @@ function init() {
                             if (this.className.indexOf("active") >= 0) {
                                 return;
                             }
-                            typeText("",
+                            typeText("<ul><li>Successfully wrote an implementation paper on Face detection using Image Processing during my Masters and developed a small application using MATLAB implementing the algorithm.</li><li>Won first prize in technical competitions like C-Debugging and Web Designs continuously for three years during Bachelor's.</li></ul>",
                             15, 100, this);
                         });
                     }
@@ -223,4 +223,28 @@ function typeText(typingText, typeSpeed, typeInterval, clickedElement) {
             typeCommand = true;
         }
     }, typeInterval);
+}
+
+var resizeListener;
+var didLoaderRun = false;
+
+function init() {
+    if (didLoaderRun == false) {
+        clearTimeout(resizeListener);
+        resizeListener = setTimeout(function() {
+            didLoaderRun = true;
+            doLoad();
+        }, 500);
+    }
+}
+
+// This method is needed because, sometimes the browser is resizing after onload - mostly when you open a new window and run
+function resize() {
+    if (didLoaderRun == false) {
+        clearTimeout(resizeListener);
+        resizeListener = setTimeout(function() {
+            didLoaderRun = true;
+            doLoad();
+        }, 500);
+    }
 }
