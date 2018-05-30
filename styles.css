@@ -8,6 +8,10 @@ body {
     user-select: none;
 }
 
+h3 {
+    display: inline;
+}
+
 body div {
     width: 100%;
 }
