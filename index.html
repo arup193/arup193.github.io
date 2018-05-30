@@ -3,7 +3,7 @@
         <link rel="stylesheet" type="text/css" href="styles.css" />
         <script type="text/javascript" src="main.js"></script>
     </head>
-    <body onload="init()">
+    <body onload="init()" onresize="resize()">
         <div id="pageContent" style="display: none;">
             <div class="pageHeader">
                 <span>About</span>
@@ -14,8 +14,7 @@
                 <span>Accomplishments</span>
             </div>
             <div class="pageBody">
-                <div id="contentHolder" class="content_holder">
-                </div>
+                <div id="contentHolder" class="content_holder"></div>
             </div>
             <div class="pageFooter">
                 <div class="terminal_header">
